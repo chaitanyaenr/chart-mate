@@ -27,6 +27,7 @@ source ${RERUN_MODULE_DIR}/lib/log.sh
 source ${RERUN_MODULE_DIR}/lib/gke.sh
 source ${RERUN_MODULE_DIR}/lib/helm.sh
 source ${RERUN_MODULE_DIR}/lib/deis.sh
+source ${RERUN_MODULE_DIR}/lib/pod-check.sh
 
 function retrieve-deis-info {
   set +e
@@ -338,10 +339,4 @@ function wait-for-http-status {
 
     echo -n . 1>&2
   done
-}
-
-function print-out-running-images {
-  if [ -s "${DEIS_DESCRIBE}" ]; then
-    cat "${DEIS_DESCRIBE}" | grep Image:
-  fi
 }
