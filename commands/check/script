@@ -47,4 +47,9 @@ rerun_options_parse "$@"
 log-info "Load the chart-mate configuration"
 load-config
 log-info "Health check our deis cluster"
-deis::healthcheck
+NAME="${1}"
+if [[ "${NAME}" == "" ]] || [[ "${NAME}" == "workflow-dev" ]]; then
+  deis::healthcheck
+else
+  pod::status default
+fi

@@ -27,6 +27,7 @@ source ${RERUN_MODULE_DIR}/lib/log.sh
 source ${RERUN_MODULE_DIR}/lib/gke.sh
 source ${RERUN_MODULE_DIR}/lib/helm.sh
 source ${RERUN_MODULE_DIR}/lib/deis.sh
+source ${RERUN_MODULE_DIR}/lib/pod.sh
 
 function retrieve-deis-info {
   set +e
